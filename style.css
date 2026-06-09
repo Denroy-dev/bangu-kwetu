@@ -84,7 +84,7 @@ body {
 /* TICKER */
 #bk-ticker-bar {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     height: 40px;
     background: #1a1a1a;
     border-top: 2px solid #D62828;
@@ -103,31 +103,29 @@ body {
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.15em;
-
     text-transform: uppercase;
+    height: 100%;
 }
 #bk-ticker-track {
     flex: 1;
     overflow: hidden;
-    min-width: 0;
 }
 #bk-ticker-inner {
-    display: flex;
-    align-items: center;
-    height: 100%;
+    display: inline block;
     white-space: nowrap;
+    padding-right: 100%;
     will-change: transform;
     animation: bk-scroll 20s linear infinite;
 }
 .bk-tick-item {
+    display: inline-block;
     color: #ffffff;
     font-size: 13px;
     padding: 0 40px;
 }
 @keyframes bk-scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-10
-        0%); }
+    to { transform: translateX(-100%); }
 }
 /* SECTIONS */
 .bk-section {
@@ -339,23 +337,6 @@ body {
     .bk-container {
         padding: 0 16px !important;
         width: 100%;
-    }
-    #bk-ticker-bar  {
-        width: 100vw;
-        max-width: 100%;
-        overflow: hidden;
-    }
-    #bk-ticker-track {
-        overflow: hidden;
-        max-width: 100%;
-    }
-    #bk-ticker-inner {
-        animation-duration: 15s;
-        will-change: transform;
-    }
-    .bk-tick-item {
-        font-size: 11px;
-        padding: 0 15px;
     }
     html, body {
         overflow-x: hidden;
