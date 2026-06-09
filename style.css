@@ -116,7 +116,7 @@ body {
     align-items: center;
     height: 100%;
     white-space: nowrap;
-    animation: bk-scroll 6s linear infinite;
+    animation: bk-scroll 20s linear infinite;
 }
 .bk-tick-item {
     color: #ffffff;
@@ -348,7 +348,7 @@ body {
         max-width: 100%;
     }
     #bk-ticker-inner {
-        animation-duration: 15s;
+        animation-duration: 12s;
     }
     .bk-tick-item {
         padding: 0 20px;
