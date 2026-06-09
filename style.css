@@ -116,6 +116,7 @@ body {
     align-items: center;
     height: 100%;
     white-space: nowrap;
+    will-change: transform;
     animation: bk-scroll 20s linear infinite;
 }
 .bk-tick-item {
@@ -124,7 +125,7 @@ body {
     padding: 0 40px;
 }
 @keyframes bk-scroll {
-    from { transform: translate(0); }
+    from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
 /* SECTIONS */
