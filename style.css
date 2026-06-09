@@ -353,7 +353,8 @@ body {
         will-change: transform;
     }
     .bk-tick-item {
-        padding: 0 20px;
+        font-size: 11px;
+        padding: 0 15px;
     }
     html, body {
         overflow-x: hidden;
