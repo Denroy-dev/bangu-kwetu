@@ -18,7 +18,7 @@ body {
     padding: 16px 0 !important;
     padding-left: 0 !important;
     position: sticky;
-    top: 0;
+    top: 32px;
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     width: 100%;
@@ -85,46 +85,65 @@ body {
 #bk-ticker-bar {
     display: flex;
     align-items: center;
-    height: 40px;
-    background: #1a1a1a;
-    border-top: 2px solid #D62828;
-    border-bottom: 2px solid #D62828;
+    height: 32px;
+    background: #D62828;
     overflow: hidden;
-    position: relative;
-    max-width: 100vw;  
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    width: 100%;
 }
 #bk-ticker-label {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    background: #D62828;
+    gap: 5px;
+    padding: 0 14px;
+    background: #1a1a1a;
     color: #ffffff;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 900;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     height: 100%;
+    white-space: nowrap;
+}
+#bk-ticker-dot {
+    color: #D62828;
+    font-size: 12px;
 }
 #bk-ticker-track {
     flex: 1;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 #bk-ticker-inner {
-    display: inline block;
+    display: inline-flex;
+    align-items: center;
     white-space: nowrap;
-    will-change: transform;
-    animation: bk-scroll 20s linear infinite;
+    animation: bk-scroll 25s linear infinite;
+}
+#bk-ticker-inner:hover {
+    animation-play-state: paused;
 }
 .bk-tick-item {
     display: inline-block;
     color: #ffffff;
-    font-size: 13px;
+    font-size: 12.5px;
+    font-weight: 600;
     padding: 0 40px;
+}
+.bk-tick-item::after {
+    content: '◆';
+    margin-left: 40px;
+    opacity: 0.4;
+    font-size: 8px;
 }
 @keyframes bk-scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+    to   { transform: translateX(-50%); }
 }
 /* SECTIONS */
 .bk-section {
