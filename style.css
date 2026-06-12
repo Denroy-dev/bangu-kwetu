@@ -489,6 +489,9 @@ body {
 #bk-shujaa-link:hover {
     text-decoration: underline;
 }
+.bk-nav {
+    display: none;
+}
 /* CATEGORY NAV MOBILE */
 @media (max-width: 768px) {
     .bk-header .bk-container {
