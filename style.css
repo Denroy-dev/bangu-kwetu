@@ -388,6 +388,7 @@ body {
     z-index: 90;
     transition: transform 0.3s ease, opacity 0.3s ease;
     width: 100%;
+    overflow: hidden;
 }
 #bk-cat-nav.hidden {
     transform: translateY(-100%);
