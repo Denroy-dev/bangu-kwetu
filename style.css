@@ -402,6 +402,7 @@ body {
     scrollbar-width: none;
     height: 40px;
     gap: 0;
+    justify-content: space-evenly;
 }
 #bk-cat-nav-inner::-webkit-scrollbar {
     display: none;
@@ -527,6 +528,8 @@ body {
         width: 72px;
         font-size: 28px;
     }
+    #bk-cat-nav-inner  {
+        justify-content: flex-start;
 }
 
 
