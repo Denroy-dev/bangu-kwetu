@@ -573,25 +573,20 @@ body {
 #bk-search-box {
     display: none;
     align-items: center;
-    gap: 6px;
-    position: absolute;
-    right: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 200px;
+    gap: 4px;
     z-index: 102;
 }
 #bk-search-box.open {
     display: flex;
 }
 #bk-search-input {
-    flex: 1;
+    width: 140px;
     background: #f0f0f0;
     border: none;
     border-bottom: 2px solid #D62828;
     color: #1a1a1a;
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 6px 10px;
+    font-size: 13px;
     outline: none;
     font-family: 'IBM Plex Sans', sans-serif;
     border-radius: 2px;
