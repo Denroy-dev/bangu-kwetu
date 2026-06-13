@@ -56,13 +56,12 @@ body {
     position: relative;
 }
 .bk-hamburger {
-    display: flex !important;
+    display: none;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
     background: none;
     border: none;
-    border-right: 1px solid #e0e0e0;
     cursor: pointer;
     padding: 8px 10px;
     color: #1a1a1a;
@@ -499,9 +498,9 @@ body {
     align-items: center;
     gap: 0;
     margin-left: auto;
-    border: none;
-    border-radius: 0;
-    overflow: visible;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
     flex-shrink: 0;
 }
 .bk-header-spacer {
@@ -583,26 +582,27 @@ body {
     align-items: center;
     gap: 4px;
     position: absolute;
-    right: 50px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
-    width: 160px;
+    width: 220px;
     z-index: 102;
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
-    padding: 2px 6px;
+    padding: 4px 8px;
+
 }
 #bk-search-box.open {
     display: flex;
 }
 #bk-search-input {
-    width: 90px;
+    flex: 1;
     background: #f0f0f0;
     border: none;
     border-bottom: 2px solid #D62828;
     color: #1a1a1a;
-    padding: 6px 10px;
+    padding: 7px 12px;
     font-size: 13px;
     outline: none;
     font-family: 'IBM Plex Sans', sans-serif;
