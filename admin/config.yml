@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: bangukwetu/bangu-kwetu
+  branch: main
+  base_url: https://sveltia-cms-auth.bangukwetu.workers.dev
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: articles
+    label: Articles
+    folder: data
+    create: true
+    format: json
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: string }
+      - { label: Category, name: category, widget: select, options: [news, sports, business, nairobi, community] }
+      - { label: Image, name: image, widget: image }
+      - { label: Excerpt, name: desc, widget: text }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Breaking News, name: breaking, widget: boolean, default: false }
+
+  - name: shujaa
+    label: Shujaa wa Siku
+    folder: data
+    create: true
+    format: json
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Eyebrow, name: eyebrow, widget: string }
+      - { label: Description, name: desc, widget: text }
+      - { label: Full Story, name: story, widget: markdown }
+      - { label: Photo, name: photo, widget: image }
+      - { label: Link, name: link, widget: string, default: shujaa.html }
