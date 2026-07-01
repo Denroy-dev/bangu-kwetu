@@ -160,3 +160,19 @@ async function loadShujaa() {
 }
 
 loadShujaa();
+// Header date
+document.getElementById('bk-date').textContent =
+    new Date().toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+
+// WhatsApp button hide-on-scroll-down
+let bkLastScroll = 0;
+const bkWaBtn = document.getElementById('bk-whatsapp-float');
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > bkLastScroll && currentScroll > 100) {
+        bkWaBtn.classList.add('bk-hide');
+    } else {
+        bkWaBtn.classList.remove('bk-hide');
+    }
+    bkLastScroll = currentScroll;
+});

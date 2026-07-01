@@ -61,6 +61,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    pointer-events: none;
 }
 .bk-logo h1 {
     font-size: 28px;
@@ -117,6 +118,7 @@ body {
     align-items: center;
     margin-left: auto;
     flex-shrink: 0;
+    z-index: 10;
 }
 .bk-search-btn {
     background: none;
@@ -124,16 +126,24 @@ body {
     cursor: pointer;
     font-size: 16px;
     padding: 8px 10px;
-    color: rgba(255,255,255,0.7);
+    color: #ffffff;
     display: flex;
     align-items: center;
     z-index: 101;
     transition: color 0.2s;
 }
-.bk-search-btn:hover { color: #fff; }
+.bk-search-btn:hover { color: #ffffff }
+.bk-date {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #ffffff;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
 
 /* ══════════════════════════════════════
-   CATEGORY NAV — same blue, no shade change
+   CATEGORY NAV — pure white
    ══════════════════════════════════════ */
 #bk-cat-nav {
     width: 100%;
@@ -141,8 +151,8 @@ body {
     position: sticky;
     top: 64px;
     z-index: 90;
-    background: #2E6DA4;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    background: #ffffff;
+    border-top: 1px solid #dde5ed;
 }
 #bk-cat-nav-inner {
     display: flex;
@@ -151,12 +161,12 @@ body {
     scrollbar-width: none;
     height: 38px;
     gap: 0;
-    justify-content: strech;
+    justify-content: stretch;
 }
 #bk-cat-nav-inner::-webkit-scrollbar { display: none; }
 .bk-cat-link {
     font-family: 'Oswald', sans-serif;
-    color: rgba(255,255,255,0.5);
+    color: #2B2D42;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -167,17 +177,25 @@ body {
     display: flex;
     align-items: center;
     white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: color 0.2s, border-color 0.2s;
+    position: relative;
+    transition: color 0.2s;
     flex: 1;
     justify-content: center;
 }
-.bk-cat-link:hover { color: rgba(255,255,255,0.85); }
+.bk-cat-link:hover { color: #2B2D42; }
 .bk-cat-link.active {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
+    color: #2B2D42;
     font-weight: 700;
+}
+.bk-cat-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: #E87722;
 }
 
 /* Bottom accent line under entire header block */
@@ -212,7 +230,7 @@ body {
     flex: 1;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #EBF1F5;
+    border-bottom: 2px solid #E87722;
     color: #fff;
     padding: 7px 12px;
     font-size: 13px;
@@ -220,7 +238,11 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     min-width: 160px;
 }
-#bk-search-input::placeholder { color: rgba(255,255,255,0.4); }
+#bk-search-input::placeholder {
+    color: #ffffff;
+    font-weight: 700;
+    opacity: 1;
+}
 #bk-search-close {
     background: none;
     border: none;
@@ -230,7 +252,7 @@ body {
     padding: 4px;
     transition: color 0.2s;
 }
-#bk-search-close:hover { color: #fff; }
+#bk-search-close:hover { color: #ffff; }
 
 /* ══════════════════════════════════════
    SHUJAA WA SIKU
@@ -464,7 +486,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
+    color: #ffffff;
     margin-bottom: 14px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -477,11 +499,11 @@ body {
 }
 .bk-footer-links li {
     font-size: 13px;
-    color: rgba(255,255,255,0.75);
+    color: #ffffff;
 }
 .bk-footer-links a {
     font-size: 13px;
-    color: rgba(255,255,255,0.75);
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -493,7 +515,7 @@ body {
 }
 .bk-social {
     font-size: 13px;
-    color: rgba(255,255,255,0.45);
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -502,9 +524,15 @@ body {
     background: #1a4f7a;
     padding: 14px 0;
 }
+.bk-footer-bottom {
+    background: #ffffff;
+    padding: 14px 0;
+    border-top: 1px solid #dde5ed;
+}
 .bk-footer-bottom p {
     font-size: 11.5px;
-    color: rgba(255,255,255,0.25);
+    color: #2B2D42;
+    color: #000000;
     text-align: center;
 }
 /* ══════════════════════════════════════
@@ -517,6 +545,29 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+/* ══════════════════════════════════════
+   WHATSAPP FLOATING BUTTON
+   ══════════════════════════════════════ */
+.bk-whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    z-index: 300;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.bk-whatsapp-float.bk-hide {
+    transform: translateY(90px);
+    opacity: 0;
 }
 
 /* ══════════════════════════════════════
@@ -563,7 +614,7 @@ body {
         font-weight: 600;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        color: rgba(255,255,255,0.6);
+        color: #ffffff;
         text-decoration: none;
         border-bottom: 1px solid rgba(255,255,255,0.06);
         width: 100%;
